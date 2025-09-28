@@ -1,118 +1,138 @@
-/* Reset & Body */
-body {
+/* RESET & GLOBAL */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
   display: flex;
-}
-
-/* Topbar */
-.topbar {
-  width: 100%;             /* Penuhi layar */
-  position: fixed;         /* Tempel di atas */
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  padding: 20px;
-  background: #ecf0f1;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  z-index: 1000;           /* Supaya tidak ketutup elemen lain */
-}
-
-/* Sidebar */
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  margin-top: 60px;        /* Turunkan sesuai tinggi topbar */
-  width: 200px;
-  height: 100%;
-  background: #2c3e50;
-  padding-top: 10px;
-  color: white;
-}
-
-.sidebar a {
-  display: block;
-  padding: 12px 20px;
-  color: white;
-  text-decoration: none;
-}
-
-.sidebar a:hover {
-  background: #34495e;
-}
-
-/* Main Content */
-.main-content {
-  margin-top: 70px;        /* Jarak dari topbar */
-  margin-left: 200px;      /* Supaya tidak ketiban sidebar */
-  padding: 20px;
-}
-
-/* Profile Picture */
-.profile-pic {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-/* Tombol Aplikasi */
-.app-btn {
-  margin: 20px 0;
-  padding: 10px 15px;
-  background: #3498db;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.app-btn:hover {
-  background: #2980b9;
-}
-
-/* Menu Aplikasi */
-.app-menu {
-  display: none;
-  margin-top: 10px;
-  width: 150px;
-  padding: 10px;
-  background: #f9f9f9;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.app-menu a {
-  display: block;
-  padding: 8px;
-  text-decoration: none;
+  background: #f4f6f9;
   color: #333;
 }
 
-.app-menu a:hover {
-  background: #ddd;
+/* =========================
+   SIDEBAR
+========================= */
+.sidebar {
+  width: 240px;
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: linear-gradient(180deg, #4f46e5, #6366f1);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Konten atas dan profil bawah */
+  padding-top: 20px;
 }
 
-/* Submenu Aplikasi */
+.sidebar-content a,
+.sidebar-content .logo {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.sidebar-content .logo {
+  text-align: center;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.sidebar-content .logo span {
+  color: #ffd700;
+}
+
+.sidebar-content a {
+  padding: 14px 25px;
+  font-size: 16px;
+}
+
+.sidebar-content a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  padding-left: 30px;
+}
+
 .submenu {
-  max-height: 0;
-  overflow: hidden;
-  background: #34495e;
-  transition: max-height 0.3s ease;
-}
-
-.submenu.open {
-  max-height: 200px; /* cukup besar untuk menampung semua item */
+  display: none;
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .submenu a {
   padding-left: 40px;
-  font-size: 14px;
+  font-size: 15px;
 }
 
-.submenu a:hover {
-  background: #3b5998;
+.submenu.open {
+  display: block;
+}
+
+/* Profile di Bawah Sidebar */
+.sidebar-profile {
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar-profile .profile-pic {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.sidebar-profile .profile-pic:hover {
+  transform: scale(1.1);
+}
+
+.sidebar-profile .profile-name {
+  margin-top: 10px;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* =========================
+   MAIN CONTENT
+========================= */
+.main-content {
+  margin-left: 240px;
+  width: calc(100% - 240px);
+  padding: 20px;
+}
+
+/* Topbar */
+.topbar {
+  background: #fff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.topbar h1 {
+  font-size: 20px;
+  font-weight: 600;
+  color: #4f46e5;
+}
+
+/* Welcome Card */
+.welcome-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s;
+}
+
+.welcome-card:hover {
+  transform: translateY(-5px);
 }

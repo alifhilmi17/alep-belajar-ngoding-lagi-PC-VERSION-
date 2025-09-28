@@ -5,43 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alep Belajar - Dashboard</title>
   <link rel="stylesheet" href="css/alepbelajarbuatdashboard.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- Tombol Menu -->
-  <!-- <button class="menu-toggle" onclick="toggleSidebar()">Menu</button>-->
-
   <!-- Sidebar -->
   <div class="sidebar">
-    <a href="#">Home</a>
-    <a href="alepbelajarbuatporto.html">Porto</a>
-    <a href="#">Buat Porto</a>
-    <a href="javascript:void(0)" onclick="toggleSidebarMenu()">
-      Aplikasi <span id="arrow">▾</span>
-    </a>
+    <div class="sidebar-content">
+      <h2 class="logo">Alep<span>Belajar</span></h2>
+      <a href="#">🏠 Home</a>
+      <a href="alepbelajarbuatporto.html">📂 Porto</a>
+      <a href="#">✍️ Buat Porto</a>
+      <a href="javascript:void(0)" onclick="toggleSidebarMenu()" class="has-submenu">
+        📱 Aplikasi <span id="arrow">▾</span>
+      </a>
 
-    <!-- Submenu Aplikasi -->
-    <div class="submenu" id="appSubmenu">
-      <a href="#">Menu 1</a>
-      <a href="#">Menu 2</a>
-      <a href="#">Menu 3</a>
+      <!-- Submenu Aplikasi -->
+      <div class="submenu" id="appSubmenu">
+        <a href="#">Menu 1</a>
+        <a href="#">Menu 2</a>
+        <a href="#">Menu 3</a>
+      </div>
     </div>
-  </div>
 
-  <!-- Main Content -->
-  <div class="main-content">
-
-    <!-- Topbar -->
-    <div class="topbar">
+    <!-- Profile Section di Bawah Sidebar -->
+    <div class="sidebar-profile">
       <img 
         src="images/Screenshot.png" 
         alt="Profile" 
         class="profile-pic" 
         onclick="goToProfile()"
       >
+      <p class="profile-name">Alep</p>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+
+    <div class="welcome-card">
+      <h2>🚀 Halo, Selamat Datang!</h2>
+      <p>Eksplorasi fitur-fitur menarik di dalam dashboard ini dan mulai membuat portofolio terbaikmu.</p>
     </div>
 
-    <h1>Selamat Datang di Dashboard</h1>
   </div>
 
   <script>
@@ -52,11 +58,8 @@
     function toggleSidebarMenu() {
       const submenu = document.getElementById("appSubmenu");
       submenu.classList.toggle("open");
-    }
-
-    function toggleSidebar() {
-      const sidebar = document.querySelector(".sidebar");
-      sidebar.classList.toggle("active");
+      const arrow = document.getElementById("arrow");
+      arrow.textContent = submenu.classList.contains("open") ? "▴" : "▾";
     }
   </script>
 
