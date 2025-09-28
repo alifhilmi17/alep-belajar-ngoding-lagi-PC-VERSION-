@@ -13,7 +13,7 @@
   <div class="sidebar">
     <div class="sidebar-content">
       <h2 class="logo">Alep<span>Belajar</span></h2>
-      <a href="#">🏠 Home</a>
+      <a href="alepbelajarbuatdashboard.html" class="active">🏠 Home</a>
       <a href="alepbelajarbuatporto.html">📂 Porto</a>
       <a href="#">✍️ Buat Porto</a>
       <a href="javascript:void(0)" onclick="toggleSidebarMenu()" class="has-submenu">
@@ -43,9 +43,43 @@
   <!-- Main Content -->
   <div class="main-content">
 
+    <!-- Welcome -->
     <div class="welcome-card">
       <h2>🚀 Halo, Selamat Datang!</h2>
       <p>Eksplorasi fitur-fitur menarik di dalam dashboard ini dan mulai membuat portofolio terbaikmu.</p>
+    </div>
+
+    <!-- ===== TASKS SECTION ===== -->
+    <div class="task-section">
+
+      <!-- To Do -->
+      <div class="task-card todo">
+        <h3>📝 To Do</h3>
+        <ul>
+          <li>Menyelesaikan desain logo</li>
+          <li>Update profil portofolio</li>
+          <li>Kumpulkan data aplikasi</li>
+        </ul>
+      </div>
+
+      <!-- On Progress -->
+      <div class="task-card progress">
+        <h3>⚡ On Progress</h3>
+        <ul>
+          <li>Pengembangan sistem booking studio</li>
+          <li>Pembuatan artikel UI/UX</li>
+        </ul>
+      </div>
+
+      <!-- Coming Task -->
+      <div class="task-card coming">
+        <h3>📅 Coming Task</h3>
+        <ul>
+          <li>Presentasi project Mollery</li>
+          <li>Upload portofolio ke GitHub</li>
+          <li>Testing aplikasi maintenance rumah</li>
+        </ul>
+      </div>
     </div>
 
   </div>
@@ -62,6 +96,20 @@
       arrow.textContent = submenu.classList.contains("open") ? "▴" : "▾";
     }
   </script>
+
+  <script>
+  // Tambahkan class active sesuai URL
+  const currentPage = window.location.pathname.split("/").pop();
+  const links = document.querySelectorAll(".sidebar-content a");
+
+  links.forEach(link => {
+    const hrefPage = link.getAttribute("href");
+    if (hrefPage && hrefPage === currentPage) {
+      link.classList.add("active");
+    }
+  });
+</script>
+
 
 </body>
 </html>

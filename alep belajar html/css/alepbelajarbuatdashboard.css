@@ -13,6 +13,59 @@ body {
 }
 
 /* =========================
+   TASK DASHBOARD
+========================= */
+.task-section {
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.task-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: 0.3s;
+}
+
+.task-card:hover {
+  transform: translateY(-5px);
+}
+
+.task-card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: #4f46e5;
+}
+
+.task-card ul {
+  list-style: none;
+}
+
+.task-card ul li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+  color: #555;
+}
+
+.task-card ul li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #6366f1;
+  font-weight: bold;
+}
+
+/* Warna khusus tiap kategori */
+.task-card.todo h3 { color: #f59e0b; }      /* oranye */
+.task-card.progress h3 { color: #10b981; }  /* hijau */
+.task-card.coming h3 { color: #3b82f6; }    /* biru */
+
+/* =========================
    SIDEBAR
 ========================= */
 .sidebar {
@@ -72,11 +125,20 @@ body {
   display: block;
 }
 
+/* Link aktif di sidebar */
+.sidebar-content a.active {
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffd700;               /* Warna teks emas */
+  font-weight: 600;
+  border-left: 4px solid #ffd700;
+  padding-left: 21px;           /* Sesuaikan agar teks tetap rapi */
+  transition: all 0.3s ease;
+}
+
+
 /* Profile di Bawah Sidebar */
 .sidebar-profile {
   text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .sidebar-profile .profile-pic {
