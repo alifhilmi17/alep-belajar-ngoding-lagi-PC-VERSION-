@@ -65,101 +65,102 @@ body {
 .task-card.progress h3 { color: #10b981; }  /* hijau */
 .task-card.coming h3 { color: #3b82f6; }    /* biru */
 
-/* =========================
-   SIDEBAR
-========================= */
+/* ======= SIDEBAR STYLE ======= */
 .sidebar {
   width: 240px;
-  min-height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background: linear-gradient(180deg, #4f46e5, #6366f1);
-  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  background: #2d3436;          /* Warna dasar sidebar */
+  color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; /* Konten atas dan profil bawah */
-  padding-top: 20px;
+  justify-content: space-between;
+  position: fixed;              /* Tetap menempel di kiri */
+  top: 0;
+  left: 0;
+  bottom: 0;
+  padding: 20px;
+  box-shadow: 3px 0 10px rgba(0,0,0,0.2); /* Bayangan tepi */
+  z-index: 100;                 /* Pastikan di atas konten */
 }
 
-.sidebar-content a,
+/* Logo/Judul Sidebar */
 .sidebar-content .logo {
-  display: block;
+  font-size: 24px;
+  font-weight: 700;
   color: #fff;
-  text-decoration: none;
-  transition: 0.3s;
+  margin-bottom: 20px;
 }
-
-.sidebar-content .logo {
-  text-align: center;
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 30px;
-}
-
 .sidebar-content .logo span {
-  color: #ffd700;
+  color: #0984e3;               /* Warna aksen untuk teks span */
 }
 
+/* Link Menu Utama */
 .sidebar-content a {
-  padding: 14px 25px;
-  font-size: 16px;
+  display: block;
+  padding: 12px 15px;
+  color: #dfe6e9;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 8px;
+  transition: all .3s ease;
 }
-
 .sidebar-content a:hover {
-  background: rgba(255, 255, 255, 0.2);
-  padding-left: 30px;
+  background: #636e72;
+  color: #fff;
+  transform: translateX(5px);   /* Animasi geser saat hover */
+}
+.sidebar-content a.active {
+  background: #0984e3;
+  color: #fff;
 }
 
+/* Submenu */
 .submenu {
   display: none;
-  background: rgba(0, 0, 0, 0.1);
+  padding-left: 20px;
 }
-
-.submenu a {
-  padding-left: 40px;
-  font-size: 15px;
-}
-
 .submenu.open {
-  display: block;
+  display: block;               /* Muncul saat JS menambah class "open" */
+}
+.submenu a {
+  font-size: 14px;
 }
 
-/* Link aktif di sidebar */
-.sidebar-content a.active {
-  background: rgba(255, 255, 255, 0.25);
-  color: #ffd700;               /* Warna teks emas */
-  font-weight: 600;
-  border-left: 4px solid #ffd700;
-  padding-left: 21px;           /* Sesuaikan agar teks tetap rapi */
-  transition: all 0.3s ease;
-}
-
-
-/* Profile di Bawah Sidebar */
+/* Profil di Bawah Sidebar */
 .sidebar-profile {
   text-align: center;
+  margin-top: 20px;
 }
-
 .sidebar-profile .profile-pic {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
-  border: 3px solid #fff;
+  object-fit: cover;
+  border: 2px solid #0984e3;     /* Border biru */
   cursor: pointer;
-  transition: 0.3s;
+  transition: transform .3s ease;
 }
-
 .sidebar-profile .profile-pic:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);        /* Sedikit membesar saat hover */
+}
+.sidebar-profile .profile-name {
+  margin-top: 8px;
+  font-weight: 500;
+  color: #fff;
 }
 
-.sidebar-profile .profile-name {
-  margin-top: 10px;
-  color: #fff;
-  font-size: 16px;
-  font-weight: 500;
+/* ======= RESPONSIVE ======= */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 200px;
+  }
+}
+@media (max-width: 576px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    box-shadow: none;
+  }
 }
 
 /* =========================
