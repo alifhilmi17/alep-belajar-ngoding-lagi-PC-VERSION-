@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alep Belajar - Dashboard</title>
+  <link rel="stylesheet" href="css/alepbelajarbuatdashboard.css">
+</head>
+<body>
+
+  <!-- Tombol Menu -->
+  <button class="menu-toggle" onclick="toggleSidebar()">Menu</button>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="#">Home</a>
+    <a href="alepbelajarbuatporto.html">Porto</a>
+    <a href="#">Buat Porto</a>
+    <a href="javascript:void(0)" onclick="toggleSidebarMenu()">
+      Aplikasi <span id="arrow">▾</span>
+    </a>
+
+    <!-- Submenu Aplikasi -->
+    <div class="submenu" id="appSubmenu">
+      <a href="#">Menu 1</a>
+      <a href="#">Menu 2</a>
+      <a href="#">Menu 3</a>
+    </div>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+    <!-- Topbar -->
+    <div class="topbar">
+      <img 
+        src="https://via.placeholder.com/40" 
+        alt="Profile" 
+        class="profile-pic" 
+        onclick="goToProfile()"
+      >
+    </div>
+
+    <h1>Selamat Datang di Dashboard</h1>
+  </div>
+
+  <script>
+    function goToProfile() {
+      window.location.href = "edit-profile.html";
+    }
+
+    function toggleSidebarMenu() {
+      const submenu = document.getElementById("appSubmenu");
+      submenu.classList.toggle("open");
+    }
+
+    function toggleSidebar() {
+      const sidebar = document.querySelector(".sidebar");
+      sidebar.classList.toggle("active");
+    }
+  </script>
+
+</body>
+</html>

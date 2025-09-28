@@ -1,0 +1,77 @@
+<!--Bagian Struktur html-->
+<!DOCTYPE html> <!-- Mendefinisikan tipe dokumen HTML5 -->
+<html lang="en"> <!-- Bahasa utama halaman  -->
+<head>
+  <meta charset="UTF-8"> <!-- Encoding karakter UTF-8 agar mendukung semua huruf -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Supaya tampilan responsive di perangkat mobile -->
+  <title>Alep Belajar Ngoding Buat Portofolio </title> <!-- Judul tab browser -->
+
+  <!-- Import font Poppins dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <!-- Panggil file CSS eksternal -->
+  <link href="css/alepbelajarbuatporto.css" rel="stylesheet">
+</head>
+
+<body>
+  <!-- Container utama untuk membungkus semua isi -->
+  <div class="container">
+
+    <!-- Bagian Profile -->
+    <div class="profile">
+      <!-- Foto profil dari folder images -->
+      <img src="images/Screenshot.png" alt="Foto Profil" >
+      <!-- Nama lengkap -->
+      <h1>Muhammad Alif Hilmi</h1>
+      <!-- Kontak: email dan telepon -->
+      <p>Email: email@example.com | Telepon: 0812-3456-7890</p>
+      <!-- Alamat -->
+      <p>Alamat: Batam, Indonesia</p>
+    </div>
+
+    <!-- Bagian About Me -->
+    <div class="section">
+      <h3>Tentang Saya</h3>
+      <p>
+        Saya adalah seorang mahasiswa yang memiliki minat di banyak bidang. 
+        Berpengalaman dalam banyak hal, dan selalu ingin mengembangkan diri.
+      </p>
+    </div>
+
+    <!-- Bagian Pendidikan -->
+    <div class="section">
+      <h3>Pendidikan</h3>
+      <p><b>Politeknik Negeri Batam</b> – D4 Teknologi Rekayasa Perangkat Lunak (2022 - Sekarang)</p>
+      <p><b>SMA Negeri 1</b> – IPS (2019 - 2022)</p>
+    </div>
+
+    <!-- Bagian Experience -->
+    <div class="section">
+      <h3>Pengalaman</h3>
+      <p><b>PT EPSON BATAM</b> – Apprentice Web Developer (2025 - Sekarang)</p>
+      <p><b>Guitarist</b> – The Unwanted (2024 - Sekarang)</p>
+    </div>
+
+    <!-- Bagian Keahlian -->
+    <div class="section">
+      <h3>Keahlian</h3>
+      <p>HTML, CSS, JavaScript</p>
+      <p>Python, Java</p>
+      <p>Desain UI/UX</p>
+    </div>
+
+    <!-- Bagian Button Edit -->
+    <div class="section" style="text-align: center; margin-top: 20px;">
+      <!-- Tombol untuk mengedit CV (sementara hanya alert) -->
+      <button onclick="editCV()">✏️ Edit Porto</button>
+    </div>
+  </div>
+
+  <!-- Script untuk tombol edit -->
+  <script>
+    function editCV() {
+      alert("Fitur edit masih dalam pengembangan!");
+    }
+  </script>
+</body>
+</html>

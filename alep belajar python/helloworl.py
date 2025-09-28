@@ -1,0 +1,1 @@
+print("ALEP BELAJAR NGODING LAGI!!") 

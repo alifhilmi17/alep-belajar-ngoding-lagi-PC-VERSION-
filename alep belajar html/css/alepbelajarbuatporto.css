@@ -1,0 +1,123 @@
+/* ========== Global Styles ========== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #74ABE2, #5563DE);
+  color: #333;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* ========== Container ========== */
+.container {
+  width: 85%; /* Lebar lebih kecil */
+  max-width: 700px; /* Lebar maksimum dikecilkan */
+  background: #fff;
+  padding: 16px; /* Padding lebih kecil */
+  border-radius: 12px; /* Sudut lebih kecil */
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  animation: fadeIn 1s ease-in-out;
+  text-align: center;
+}
+
+/* ========== Profile Section ========== */
+.profile {
+  margin-bottom: 16px;
+}
+
+.profile img {
+  width: 80px; /* Foto lebih kecil */
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #5563DE;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+.profile h1 {
+  margin: 8px 0 4px;
+  font-size: 20px; /* Nama lebih kecil */
+  color: #222;
+}
+
+.profile p {
+  margin: 4px 0;
+  font-size: 12px; /* Teks kontak lebih kecil */
+  color: #555;
+}
+
+/* ========== Section ========== */
+.section {
+  margin-bottom: 12px; /* Lebih rapat */
+}
+
+.section h3 {
+  color: #5563DE;
+  border-bottom: 2px solid #5563DE;
+  display: inline-block;
+  margin-bottom: 6px;
+  font-size: 16px; /* Judul lebih kecil */
+}
+
+.section p {
+  font-size: 12px; /* Isi lebih kecil */
+  margin: 3px 0;
+}
+
+/* ========== Button ========== */
+button {
+  padding: 8px 16px; /* Tombol lebih kecil */
+  font-size: 12px; 
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #5563DE, #74ABE2);
+  color: white;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 
+    0 5px 14px rgba(0,0,0,0.3),
+    0 0 10px rgba(85, 99, 222, 0.6);
+}
+
+button:active {
+  transform: scale(0.94);
+}
+
+/* ========== Animasi Fade In ========== */
+@keyframes fadeIn {
+  from { 
+    opacity: 0; 
+    transform: translateY(15px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 600px) {
+  .profile h1 {
+    font-size: 18px;
+  }
+  .section h3 {
+    font-size: 14px;
+  }
+  .section p {
+    font-size: 11px;
+  }
+  button {
+    font-size: 11px;
+    padding: 6px 12px;
+  }
+}

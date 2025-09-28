@@ -1,0 +1,118 @@
+/* Reset & Body */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+}
+
+/* Topbar */
+.topbar {
+  width: 100%;             /* Penuhi layar */
+  position: fixed;         /* Tempel di atas */
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px 20px;
+  background: #ecf0f1;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 1000;           /* Supaya tidak ketutup elemen lain */
+}
+
+/* Sidebar */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-top: 60px;        /* Turunkan sesuai tinggi topbar */
+  width: 200px;
+  height: 100%;
+  background: #2c3e50;
+  padding-top: 10px;
+  color: white;
+}
+
+.sidebar a {
+  display: block;
+  padding: 12px 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.sidebar a:hover {
+  background: #34495e;
+}
+
+/* Main Content */
+.main-content {
+  margin-top: 70px;        /* Jarak dari topbar */
+  margin-left: 200px;      /* Supaya tidak ketiban sidebar */
+  padding: 20px;
+}
+
+/* Profile Picture */
+.profile-pic {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Tombol Aplikasi */
+.app-btn {
+  margin: 20px 0;
+  padding: 10px 15px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.app-btn:hover {
+  background: #2980b9;
+}
+
+/* Menu Aplikasi */
+.app-menu {
+  display: none;
+  margin-top: 10px;
+  width: 150px;
+  padding: 10px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.app-menu a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #333;
+}
+
+.app-menu a:hover {
+  background: #ddd;
+}
+
+/* Submenu Aplikasi */
+.submenu {
+  max-height: 0;
+  overflow: hidden;
+  background: #34495e;
+  transition: max-height 0.3s ease;
+}
+
+.submenu.open {
+  max-height: 200px; /* cukup besar untuk menampung semua item */
+}
+
+.submenu a {
+  padding-left: 40px;
+  font-size: 14px;
+}
+
+.submenu a:hover {
+  background: #3b5998;
+}
