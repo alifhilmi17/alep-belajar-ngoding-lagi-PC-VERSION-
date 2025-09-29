@@ -9,15 +9,43 @@
 </head>
 <body>
 
-  <!-- Sidebar -->
+  <!-- ===== SIDEBAR ===== -->
   <div class="sidebar">
     <div class="sidebar-content">
       <h2 class="logo">Alep<span>Belajar</span></h2>
-      <a href="alepbelajarbuatdashboard.html" class="active"> 🏠 Home</a>
-      <a href="alepbelajarhasilporto.html"> 📂 Porto</a>
+      <a href="#" class="active">🏠 Home</a>
+      <a href="alepbelajarhasilporto.html">📂 Porto</a>
       <a href="#">✍️ Buat Porto</a>
-      <a href="javascript:void(0)" onclick="toggleSidebarMenu()" class="has-submenu"> 📱 Aplikasi <span id="arrow">▾</span>
+      <a href="javascript:void(0)" onclick="toggleSidebarMenu()" class="has-submenu">
+        📱 Aplikasi <span id="arrow">▾</span>
       </a>
+
+      <!-- Gamification -->
+      <div class="user-stats">
+        <p>⭐ Poin: <span id="userPoints">120</span></p>
+        <p>🎯 Level: <span id="userLevel">2</span></p>
+        <div class="progress-bar">
+          <div class="progress-fill" id="progressFill"></div>
+        </div>
+      </div>
+
+      <!-- Badge -->
+<div class="badge-section">
+  <h4>🏅 Badge</h4>
+  <div class="badges">
+    <!-- Task Master -->
+    <div class="badge-item" title="Task Master">
+      <span class="badge-icon">🏆</span>
+      <p>Task Master</p>
+    </div>
+
+    <!-- Fast Responder -->
+    <div class="badge-item" title="Fast Responder">
+      <span class="badge-icon">⚡</span>
+      <p>Fast Responder</p>
+    </div>
+  </div>
+</div>
 
       <!-- Submenu Aplikasi -->
       <div class="submenu" id="appSubmenu">
@@ -27,41 +55,32 @@
       </div>
     </div>
 
-    <!-- Profile Section di Bawah Sidebar -->
+    <!-- Profile Section -->
     <div class="sidebar-profile">
-      <img 
-        src="images/Screenshot.png" 
-        alt="Profile" 
-        class="profile-pic" 
-        onclick="goToProfile()"
-      >
+      <img src="images/Screenshot.png" alt="Profile" class="profile-pic" onclick="goToProfile()">
       <p class="profile-name">Alep</p>
     </div>
   </div>
 
-  <!-- Main Content -->
+  <!-- ===== MAIN CONTENT ===== -->
   <div class="main-content">
-
     <!-- Welcome -->
     <div class="welcome-card">
       <h2>🚀 Halo, Selamat Datang!</h2>
-      <p>Eksplorasi fitur-fitur menarik di dalam dashboard ini.</p>
+      <p>Eksplorasi fitur-fitur menarik dan raih badge & poin dengan menyelesaikan tugas!</p>
     </div>
 
-    <!-- ===== TASKS SECTION ===== -->
+    <!-- Tasks -->
     <div class="task-section">
-
-      <!-- To Do -->
       <div class="task-card todo">
         <h3>📝 To Do</h3>
         <ul>
-          <li>Menyelesaikan desain logo</li>
-          <li>Update profil portofolio</li>
-          <li>Kumpulkan data aplikasi</li>
+          <li>Menyelesaikan desain logo <button class="complete-btn" onclick="completeTask(this)">✅</button></li>
+          <li>Update profil portofolio <button class="complete-btn" onclick="completeTask(this)">✅</button></li>
+          <li>Kumpulkan data aplikasi <button class="complete-btn" onclick="completeTask(this)">✅</button></li>
         </ul>
       </div>
 
-      <!-- On Progress -->
       <div class="task-card progress">
         <h3>⚡ On Progress</h3>
         <ul>
@@ -70,7 +89,6 @@
         </ul>
       </div>
 
-      <!-- Coming Task -->
       <div class="task-card coming">
         <h3>📅 Coming Task</h3>
         <ul>
@@ -80,35 +98,8 @@
         </ul>
       </div>
     </div>
-
   </div>
 
-  <script>
-    function goToProfile() {
-      window.location.href = "edit-profile.html";
-    }
-
-    function toggleSidebarMenu() {
-      const submenu = document.getElementById("appSubmenu");
-      submenu.classList.toggle("open");
-      const arrow = document.getElementById("arrow");
-      arrow.textContent = submenu.classList.contains("open") ? "▴" : "▾";
-    }
-  </script>
-
-  <script>
-  // Tambahkan class active sesuai URL
-  const currentPage = window.location.pathname.split("/").pop();
-  const links = document.querySelectorAll(".sidebar-content a");
-
-  links.forEach(link => {
-    const hrefPage = link.getAttribute("href");
-    if (hrefPage && hrefPage === currentPage) {
-      link.classList.add("active");
-    }
-  });
-</script>
-
-
+  <script src="js/script.js"></script>
 </body>
 </html>
