@@ -14,6 +14,7 @@
   <!-- ===== SIDEBAR ===== -->
   <aside class="sidebar" aria-label="Sidebar Navigasi">
     <div class="sidebar-content">
+
       <!-- Logo -->
       <h2 class="logo">Alep<span>Belajar</span></h2>
 
@@ -22,13 +23,23 @@
         <a href="#" class="active" title="Halaman Utama">🏠 Home</a>
         <a href="alepbelajarhasilporto.html" title="Lihat Portofolio">📂 Porto</a>
         <a href="#" title="Buat Portofolio Baru">✍️ Buat Porto</a>
-        <a href="javascript:void(0)" onclick="toggleSidebarMenu()" class="has-submenu" title="Menu Aplikasi">
-          📱 Aplikasi <span id="arrow">▾</span>
-        </a>
+
+        <!-- Menu Aplikasi -->
+        <button class="has-submenu" onclick="toggleSidebarMenu()" aria-expanded="false">
+          📱 Aplikasi
+          <span id="arrow">▸</span>
+        </button>
+
+        <!-- Submenu -->
+        <div class="submenu" id="appSubmenu" aria-hidden="true">
+          <a href="#">🔹 Menu 1</a>
+          <a href="#">🔹 Menu 2</a>
+          <a href="#">🔹 Menu 3</a>
+        </div>
       </nav>
 
       <!-- Gamification User -->
-      <div class="user-stats" aria-label="Statistik Pengguna">
+      <div class="user-stats">
         <p>⭐ Poin: <span id="userPoints">120</span></p>
         <p>🎯 Level: <span id="userLevel">2</span></p>
         <div class="progress-bar">
@@ -36,7 +47,7 @@
         </div>
       </div>
 
-      <!-- Badge / Penghargaan -->
+      <!-- Badge -->
       <div class="badge-section">
         <h4>🏅 Badge</h4>
         <div class="badges">
@@ -51,12 +62,6 @@
         </div>
       </div>
 
-      <!-- Submenu Aplikasi -->
-      <div class="submenu" id="appSubmenu">
-        <a href="#">Menu 1</a>
-        <a href="#">Menu 2</a>
-        <a href="#">Menu 3</a>
-      </div>
     </div>
 
     <!-- Profil Pengguna -->
@@ -66,43 +71,28 @@
     </div>
   </aside>
 
-<!-- Tombol menu untuk mobile -->
-<div class="menu-toggle" onclick="toggleMenu()">☰</div>
-
-<script>
-function toggleMenu(){
-  document.querySelector('.sidebar').classList.toggle('open');
-}
-</script>
-
-
   <!-- ===== MAIN CONTENT ===== -->
   <main class="main-content">
 
     <!-- Welcome Section -->
     <section class="welcome-card">
-      <h2>🚀 Selamat Datang di Dashboard Kantor!</h2>
+      <h2>Selamat Datang di Sumatra Administration System!</h2>
       <p>Kelola tugas, dokumen, jadwal rapat, dan pengumuman internal kantor dengan mudah.</p>
     </section>
 
     <!-- ===== Administrasi Perkantoran ===== -->
     <section class="office-admin">
 
-      <!-- Task Section -->
+      <!-- ===== TASK SECTION ===== -->
       <div class="task-section">
+
         <!-- To Do -->
         <div class="task-card todo">
           <h3>📝 To Do</h3>
           <ul>
-            <li id="task1" onclick="goToTask('', 'task1')">
-              Menyelesaikan desain logo perusahaan
-            </li>
-            <li id="task2" onclick="goToTask('alepbelajarhasilporto.html', 'task2')">
-              Update profil portofolio karyawan
-            </li>
-            <li id="task3" onclick="goToTask('', 'task3')">
-              Mengumpulkan data aplikasi klien
-            </li>
+            <li id="task1" onclick="goToTask('', 'task1')">Menyelesaikan desain logo perusahaan</li>
+            <li id="task2" onclick="goToTask('alepbelajarhasilporto.html', 'task2')">Update profil portofolio karyawan</li>
+            <li id="task3" onclick="goToTask('', 'task3')">Mengumpulkan data aplikasi klien</li>
           </ul>
         </div>
 
@@ -125,10 +115,11 @@ function toggleMenu(){
             <li>Testing aplikasi maintenance rumah</li>
           </ul>
         </div>
-      </div>
 
-      <!-- Pengumuman Kantor -->
-      <div class="office-card announcements">
+      </div><!-- /task-section -->
+
+      <!-- ===== Pengumuman Kantor ===== -->
+      <div class="office-card pengumuman">
         <h3>📢 Pengumuman Kantor</h3>
         <ul>
           <li>📌 Rapat tahunan akan dilaksanakan pada <strong>5 Oktober 2025</strong>.</li>
@@ -137,57 +128,79 @@ function toggleMenu(){
         </ul>
       </div>
 
-      <!-- Agenda Rapat -->
-      <div class="office-card meeting-schedule">
-        <h3>📆 Agenda Rapat Mingguan</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Tanggal</th>
-              <th>Waktu</th>
-              <th>Agenda</th>
-              <th>Ruangan</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>Senin, 30 Sept 2025</td>
-              <td>10:00</td>
-              <td>Rapat Tim Desain</td>
-              <td>Meeting Room A</td>
-            </tr>
-            <tr>
-              <td>Rabu, 2 Okt 2025</td>
-              <td>14:00</td>
-              <td>Evaluasi Proyek Mollery</td>
-              <td>Meeting Room B</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+      <!-- ===== Agenda & Dokumen ===== -->
+      <div class="office-dashboard">
 
-      <!-- Dokumen Kantor -->
-      <div class="office-card documents">
-        <h3>📂 Dokumen Kantor</h3>
-        <ul>
-          <li><a href="#">📑 Template Surat Keputusan</a></li>
-          <li><a href="#">📑 Laporan Keuangan 2025</a></li>
-          <li><a href="#">📑 Panduan SOP Karyawan</a></li>
-        </ul>
-      </div>
+        <!-- Agenda Rapat Mingguan -->
+        <div class="office-card meeting-schedule">
+          <h3>📆 Agenda Rapat Mingguan</h3>
 
-    </section>
+          <table id="scheduleTable">
+            <thead>
+              <tr>
+                <th>Tanggal</th>
+                <th>Waktu</th>
+                <th>Agenda</th>
+                <th>Ruangan</th>
+                <th>Aksi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data dari JS akan dimasukkan di sini -->
+            </tbody>
+          </table>
+
+          <!-- Form Tambah Jadwal -->
+          <form id="addScheduleForm" class="add-form">
+            <input type="text" id="tanggal" placeholder="Tanggal (cth: Jumat, 4 Okt 2025)" required>
+            <input type="time" id="waktu" required>
+            <input type="text" id="agenda" placeholder="Agenda" required>
+            <input type="text" id="ruangan" placeholder="Ruangan" required>
+            <button type="submit">➕ Tambah</button>
+          </form>
+        </div>
+
+        <!-- Dokumen Kantor -->
+        <div class="office-card documents">
+          <h3>📂 Dokumen Kantor</h3>
+          <ul>
+            <li><a href="#">📑 Template Surat Keputusan</a></li>
+            <li><a href="#">📑 Laporan Keuangan 2025</a></li>
+            <li><a href="#">📑 Panduan SOP Karyawan</a></li>
+          </ul>
+        </div>
+
+      </div><!-- /office-dashboard -->
+
+    </section><!-- /office-admin -->
   </main>
 
   <!-- ===== SCRIPT ===== -->
   <script>
-    /* === Navigasi ke halaman tugas & simpan ID === */
+    /* ===============================
+       NAVIGASI & PROFIL
+    ================================ */
     function goToTask(url, taskId) {
       if (taskId) localStorage.setItem("currentTask", taskId);
       if (url) window.location.href = url;
     }
 
-    /* === Tandai task selesai sesuai localStorage === */
+    function goToProfile() {
+      alert("Menu profil pengguna sedang dalam pengembangan.");
+    }
+
+    function toggleSidebarMenu() {
+      const submenu = document.getElementById("appSubmenu");
+      const arrow   = document.getElementById("arrow");
+      const isOpen  = submenu.classList.toggle("open");
+      document.querySelector(".has-submenu").setAttribute("aria-expanded", isOpen);
+      submenu.setAttribute("aria-hidden", !isOpen);
+      arrow.style.transform = isOpen ? "rotate(90deg)" : "rotate(0deg)";
+    }
+
+    /* ===============================
+       STATUS TASK (LocalStorage)
+    ================================ */
     document.addEventListener("DOMContentLoaded", () => {
       const taskStatus = JSON.parse(localStorage.getItem("taskStatus")) || {};
       for (const [taskId, status] of Object.entries(taskStatus)) {
@@ -198,15 +211,64 @@ function toggleMenu(){
       }
     });
 
-    /* === Sidebar submenu toggle === */
-    function toggleSidebarMenu() {
-      document.getElementById("appSubmenu").classList.toggle("open");
-    }
+    /* ===============================
+       AGENDA RAPAT (LocalStorage)
+    ================================ */
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("addScheduleForm");
+      const tableBody = document.querySelector("#scheduleTable tbody");
 
-    /* === Placeholder untuk fitur kantor === */
-    function goToProfile() {
-      alert("Menu profil pengguna sedang dalam pengembangan.");
-    }
+      // Data awal (default) + ambil dari localStorage
+      let scheduleData = JSON.parse(localStorage.getItem("scheduleData")) || [
+        { tanggal: "Senin, 30 Sept 2025", waktu: "10:00", agenda: "Rapat Tim Desain", ruangan: "Meeting Room A" },
+        { tanggal: "Rabu, 2 Okt 2025", waktu: "14:00", agenda: "Evaluasi Proyek Mollery", ruangan: "Meeting Room B" }
+      ];
+
+      // Render tabel ke halaman
+      function renderTable() {
+        tableBody.innerHTML = "";
+        scheduleData.forEach((item, index) => {
+          tableBody.innerHTML += `
+            <tr>
+              <td>${item.tanggal}</td>
+              <td>${item.waktu}</td>
+              <td>${item.agenda}</td>
+              <td>${item.ruangan}</td>
+              <td>
+                <button class="delete-btn" data-index="${index}">🗑 Hapus</button>
+              </td>
+            </tr>`;
+        });
+      }
+
+      renderTable();
+
+      // Tambah jadwal baru
+      form.addEventListener("submit", e => {
+        e.preventDefault();
+        const tanggal = document.getElementById("tanggal").value.trim();
+        const waktu   = document.getElementById("waktu").value.trim();
+        const agenda  = document.getElementById("agenda").value.trim();
+        const ruangan = document.getElementById("ruangan").value.trim();
+
+        if (!tanggal || !waktu || !agenda || !ruangan) return;
+
+        scheduleData.push({ tanggal, waktu, agenda, ruangan });
+        localStorage.setItem("scheduleData", JSON.stringify(scheduleData));
+        renderTable();
+        form.reset();
+      });
+
+      // Hapus jadwal
+      tableBody.addEventListener("click", e => {
+        if (e.target.classList.contains("delete-btn")) {
+          const idx = e.target.dataset.index;
+          scheduleData.splice(idx, 1);
+          localStorage.setItem("scheduleData", JSON.stringify(scheduleData));
+          renderTable();
+        }
+      });
+    });
   </script>
 
 </body>
