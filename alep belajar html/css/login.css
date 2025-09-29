@@ -1,95 +1,143 @@
-/* ====== Global Styles ====== */
+/* =========================
+   GLOBAL STYLE
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-  margin: 0; /* Hilangkan jarak default dari browser di sekeliling body */
-  padding: 0; /* Hilangkan padding default body */
-  font-family: 'Poppins', sans-serif; /* Menggunakan font Poppins dari Google Fonts */
-  display: flex; /* Gunakan flexbox untuk mempermudah penataan elemen */
-  justify-content: center; /* Tengah horizontal konten di body */
-  align-items: center; /* Tengah vertikal konten di body */
-  height: 100vh; /* Tinggi body 100% dari viewport (layar) */
-  background: linear-gradient(135deg, #6a11cb, #2575fc); /* Background gradasi ungu ke biru */
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #111;
+  overflow: hidden;
 }
 
+/* =========================
+   BACKGROUND
+========================= */
+.background {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #ff6a00, #ee0979);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+  z-index: -1;
+}
 
-/* ====== Login Card ====== */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   LOGIN CARD
+========================= */
 .login-card {
-  background: #fff; /* Warna background putih untuk card */
-  padding: 40px 30px; /* Jarak dalam card: 40px atas-bawah, 30px kiri-kanan */
-  border-radius: 20px; /* Membuat sudut card melengkung */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2); /* Memberi efek bayangan agar card terlihat mengambang */
-  width: 350px; /* Lebar card */
-  text-align: center; /* Semua teks di dalam card rata tengah */
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(15px);
+  padding: 40px 35px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+  color: #fff;
+  animation: fadeIn 1.2s ease;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px);}
+  to { opacity: 1; transform: translateY(0);}
+}
 
 .login-card h2 {
-  margin-bottom: 20px; /* Jarak di bawah judul */
-  color: #333; /* Warna teks judul abu gelap */
-  font-weight: 700; /* Tebal tulisan judul */
+  font-weight: 600;
+  font-size: 28px;
+  margin-bottom: 5px;
 }
 
+.login-card .subtitle {
+  font-size: 14px;
+  color: #ddd;
+  margin-bottom: 25px;
+}
 
+/* =========================
+   INPUT GROUP
+========================= */
 .input-group {
-  margin-bottom: 20px; /* Jarak antar input field */
-  text-align: center; /* Label dan input rata kiri */
+  text-align: left;
+  margin-bottom: 20px;
 }
-
 
 .input-group label {
-  font-size: 14px; /* Ukuran font label */
-  font-weight: 500; /* Sedikit tebal */
-  color: #444; /* Warna abu gelap */
-  margin-bottom: 5px; /* Jarak antara label dan input */
-  display: block; /* Memastikan label berada di baris sendiri */
+  font-size: 14px;
+  color: #eee;
+  display: block;
+  margin-bottom: 6px;
 }
 
-
 .input-group input {
-  width: 100%; /* Input menyesuaikan lebar card */
-  padding: 12px; /* Jarak di dalam input */
-  border-radius: 10px; /* Sudut input melengkung */
-  border: 1px solid #ccc; /* Warna border abu terang */
-  outline: none; /* Hilangkan garis fokus default browser */
-  transition: 0.3s; /* Animasi halus saat border berubah */
-  font-size: 14px; /* Ukuran font input */
+  width: 100%;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  font-size: 14px;
+  transition: 0.3s ease;
 }
 
 .input-group input:focus {
-  border-color: #2575fc; /* Warna border biru saat input aktif */
-  box-shadow: 0 0 5px rgba(37, 117, 252, 0.5); /* Efek cahaya biru saat fokus */
+  background: rgba(255,255,255,0.25);
+  box-shadow: 0 0 8px rgba(255,255,255,0.4);
 }
 
-
+/* =========================
+   BUTTON
+========================= */
 .login-btn {
-  width: 100%; /* Button menyesuaikan lebar card */
-  padding: 12px; /* Jarak dalam button */
-  border: none; /* Hilangkan border default */
-  border-radius: 10px; /* Sudut button melengkung */
-  background: linear-gradient(135deg, #2575fc, #6a11cb); /* Gradasi biru ke ungu */
-  color: white; /* Warna tulisan putih */
-  font-size: 16px; /* Ukuran font button */
-  font-weight: 600; /* Sedikit tebal */
-  cursor: pointer; /* Cursor berubah saat hover */
-  transition: 0.3s; /* Animasi halus untuk hover */
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .login-btn:hover {
-  opacity: 0.9; /* Efek hover sedikit transparan */
+  background: linear-gradient(135deg, #2575fc, #6a11cb);
+  transform: scale(1.03);
+  box-shadow: 0 0 15px rgba(0,0,0,0.4);
 }
 
-
+/* =========================
+   EXTRA LINKS
+========================= */
 .extra-links {
-  margin-top: 15px; /* Jarak di atas */
-  font-size: 13px; /* Ukuran font lebih kecil */
+  margin-top: 20px;
+  font-size: 14px;
+  color: #ddd;
 }
 
 .extra-links a {
-  color: #2575fc; /* Warna link biru */
-  text-decoration: none; /* Hilangkan garis bawah default */
-  font-weight: 500; /* Sedikit tebal */
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
 }
 
 .extra-links a:hover {
-  text-decoration: underline; /* Garis bawah muncul saat hover */
+  text-decoration: underline;
 }
-

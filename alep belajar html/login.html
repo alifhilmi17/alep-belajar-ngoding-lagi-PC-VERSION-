@@ -1,61 +1,46 @@
-<!--Bagian Struktur html-->
-<!DOCTYPE html> <!-- Mendefinisikan tipe dokumen HTML5 -->
-<html lang="en"> <!-- Bahasa utama halaman  -->
+<!-- =========================
+     LOGIN PAGE – Eye Catching
+========================= -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Menentukan encoding karakter agar mendukung semua simbol -->
   <meta charset="UTF-8">
-  
-  <!-- Agar halaman responsif di semua ukuran layar, terutama mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- Judul halaman yang akan muncul di tab browser -->
   <title>Portofolio Alep - Login</title>
 
-  <!-- Import font Poppins dari Google Fonts untuk tampilan teks modern -->
+  <!-- Font Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
-  <!-- Menghubungkan halaman dengan file CSS eksternal untuk styling -->
+  <!-- File CSS Eksternal -->
   <link rel="stylesheet" href="css/login.css">
 </head>
-
 <body>
 
-  <!-- Container utama untuk kotak login -->
+  <!-- Latar belakang gradasi & animasi -->
+  <div class="background"></div>
+
+  <!-- Kotak login -->
   <div class="login-card">
-    
-    <!-- Judul form login -->
-    <h2>Login</h2>
-    
-    <!-- Form login, action menentukan halaman tujuan setelah submit, method menentukan cara data dikirim -->
-    <form action="alepbelajarbuatporto.html" method="get">
-      
-      <!-- Group untuk input username -->
+    <h2>Welcome Back</h2>
+    <p class="subtitle">Login to SAS </p>
+
+    <form action="alepbelajarbuatdashboard.html" method="get">
       <div class="input-group">
-        <!-- Label input username, 'for' menghubungkan ke id input agar klik label fokus ke input -->
         <label for="username">Username</label>
-        <!-- Input teks untuk username, placeholder sebagai petunjuk teks -->
-        <input type="text" id="username" placeholder="Enter your username">
+        <input type="text" id="username" placeholder="Enter your username" required>
       </div>
-      
-      <!-- Group untuk input password -->
+
       <div class="input-group">
-        <!-- Label input password -->
         <label for="password">Password</label>
-        <!-- Input password, teks yang diketik disembunyikan -->
-        <input type="password" id="password" placeholder="Enter your password">
+        <input type="password" id="password" placeholder="Enter your password" required>
       </div>
-      
-      <!-- Tombol submit untuk mengirim form, mengarahkan ke halaman yang ditentukan di action -->
+
       <button type="submit" class="login-btn">Login</button>
-      
     </form>
 
-    <!-- Bagian link tambahan, misal untuk pendaftaran akun baru -->
     <div class="extra-links">
-      <!-- Paragraf dengan link register, saat ini dummy link '#' -->
       <p>Don't have an account? <a href="#">Register</a></p>
     </div>
-    
   </div>
 
 </body>
