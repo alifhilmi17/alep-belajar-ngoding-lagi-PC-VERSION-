@@ -33,3 +33,4 @@ function completeTask(button) {
 }
 
 updateGamification();
+

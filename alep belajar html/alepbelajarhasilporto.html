@@ -14,6 +14,7 @@
   <!-- File CSS -->
   <link rel="stylesheet" href="css/alepbelajarhasilporto.css">
 </head>
+
 <body>
   <!-- =========================
        SIDEBAR
@@ -81,9 +82,36 @@
     </section>
 
     <section class="section center">
-      <button class="edit-btn" onclick="editCV()">✏️ Edit Porto</button>
-    </section>
-  </div>
+  <button class="edit-btn" onclick="editCV()">✏️ Edit Porto</button>
+  <button class="edit-btn" onclick="submitCV()">✅ Submit</button>
+</section>
+
+<script>
+function editCV() {
+  alert("Fitur edit masih dalam pengembangan!");
+}
+
+/* === Tandai task selesai & kembali ke dashboard === */
+function submitCV() {
+  const taskId = localStorage.getItem("currentTask");
+  if (!taskId) {
+    alert("Tidak ada task yang dipilih!");
+    return;
+  }
+
+  // Ambil status yang sudah ada
+  const taskStatus = JSON.parse(localStorage.getItem("taskStatus")) || {};
+
+  // Tandai task sebagai selesai
+  taskStatus[taskId] = "done";
+
+  // Simpan kembali ke localStorage
+  localStorage.setItem("taskStatus", JSON.stringify(taskStatus));
+
+  // Kembali ke dashboard
+  window.location.href = "alepbelajarbuatdashboard.html";
+}
+</script>
 
   <!-- Script -->
   <script>
