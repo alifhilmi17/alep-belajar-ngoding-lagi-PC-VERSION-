@@ -118,3 +118,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* ===============================
+   FUNCTION LOGOUT USER
+=============================== */
+function logoutUser() {
+  Swal.fire({
+    title: "Konfirmasi Logout",
+    text: "Apakah kamu yakin ingin keluar dari akun ini?",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#e63946",
+    cancelButtonColor: "#3085d6",
+    confirmButtonText: "Ya, Logout",
+    cancelButtonText: "Batal"
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Contoh hapus data session/localStorage
+      localStorage.clear();
+
+      Swal.fire({
+        title: "Logout Berhasil",
+        text: "Kamu telah keluar dari sistem 🚪",
+        icon: "success",
+        confirmButtonColor: "#4CAF50"
+      }).then(() => {
+        // Redirect ke halaman login (ubah sesuai file login kamu)
+        window.location.href = "login.html";
+      });
+    }
+  });
+}

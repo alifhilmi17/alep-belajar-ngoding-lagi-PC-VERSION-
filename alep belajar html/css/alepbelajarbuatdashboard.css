@@ -121,6 +121,55 @@ button.has-submenu span {
   font-weight: 600;
 }
 
+/* ---------- Logout Button Profile ----------------------- */
+.logout-btn {
+  margin-top: 12px;
+  padding: 12px 20px;
+  width: 50%;
+  background: linear-gradient(135deg, #e63946, #ff4d6d);
+  color: #fff;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border: none;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.35s ease;
+  box-shadow: 0 6px 14px rgba(230, 57, 70, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover dengan animasi glow */
+.logout-btn:hover {
+  background: linear-gradient(135deg, #ff4d6d, #e63946);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(230, 57, 70, 0.55);
+}
+
+/* Efek klik */
+.logout-btn:active {
+  transform: scale(0.97);
+  box-shadow: 0 3px 8px rgba(230, 57, 70, 0.3);
+}
+
+/* Tambah animasi "shine" */
+.logout-btn::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+  transition: 0.75s;
+}
+
+.logout-btn:hover::after {
+  left: 130%;
+}
+
+
 /* ---------- User Stats & Badges ------------------- */
 .user-stats,
 .badge-section {
