@@ -1,6 +1,6 @@
-/* ===============================
+/* ===================================================
    RESET & GLOBAL
-=============================== */
+=================================================== */
 * {
   margin: 0;
   padding: 0;
@@ -15,9 +15,9 @@ body {
   color: #333;
 }
 
-/* ===============================
+/* ===================================================
    SIDEBAR
-=============================== */
+=================================================== */
 .sidebar {
   width: 260px;
   background: linear-gradient(180deg, #0984e3 0%, #6c5ce7 100%);
@@ -30,7 +30,7 @@ body {
   box-shadow: 4px 0 15px rgba(0, 0, 0, 0.25);
 }
 
-/* Logo */
+/* ---------- Logo ---------------------------------- */
 .logo {
   text-align: center;
   font-weight: 700;
@@ -42,7 +42,7 @@ body {
   color: #ffeaa7;
 }
 
-/* Main Navigation */
+/* ---------- Main Navigation ----------------------- */
 .main-nav a,
 .main-nav button {
   display: block;
@@ -69,7 +69,7 @@ body {
   font-weight: 600;
 }
 
-/* Submenu */
+/* ---------- Submenu ------------------------------- */
 button.has-submenu span {
   float: right;
   transition: transform 0.3s ease;
@@ -100,7 +100,7 @@ button.has-submenu span {
   color: #ffeaa7;
 }
 
-/* Sidebar Profile */
+/* ---------- Sidebar Profile ----------------------- */
 .sidebar-profile {
   text-align: center;
   padding: 20px 0 10px;
@@ -121,7 +121,7 @@ button.has-submenu span {
   font-weight: 600;
 }
 
-/* User Stats & Badges */
+/* ---------- User Stats & Badges ------------------- */
 .user-stats,
 .badge-section {
   margin: 20px 18px;
@@ -163,15 +163,15 @@ button.has-submenu span {
   font-size: 1.4rem;
 }
 
-/* ===============================
+/* ===================================================
    MAIN CONTENT
-=============================== */
+=================================================== */
 .main-content {
   flex: 1;
   padding: 20px;
 }
 
-/* Welcome Card */
+/* ---------- Welcome Card -------------------------- */
 .welcome-card {
   background: #fff;
   border-radius: 8px;
@@ -180,7 +180,7 @@ button.has-submenu span {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
 }
 
-/* Office Layout */
+/* ---------- Office Layout ------------------------- */
 .office-admin {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -194,9 +194,9 @@ button.has-submenu span {
   background: #f4f6f9;
 }
 
-/* ===============================
+/* ===================================================
    CARD STYLES
-=============================== */
+=================================================== */
 .task-card,
 .office-card {
   background: #ffffff;
@@ -223,7 +223,7 @@ button.has-submenu span {
   padding: 0;
 }
 
-/* Task Section */
+/* ---------- Task Section -------------------------- */
 .task-card {
   margin-bottom: 20px;
 }
@@ -244,7 +244,7 @@ button.has-submenu span {
   text-decoration: none;
 }
 
-/* Documents */
+/* ---------- Documents ----------------------------- */
 .documents a {
   text-decoration: none;
   color: #0984e3;
@@ -253,7 +253,7 @@ button.has-submenu span {
   color: #00cec9;
 }
 
-/* Meeting Schedule */
+/* ---------- Meeting Schedule ---------------------- */
 .meeting-schedule table {
   width: 100%;
   border-collapse: collapse;
@@ -271,7 +271,7 @@ button.has-submenu span {
   color: #fff;
 }
 
-/* Form Tambah Jadwal */
+/* ---------- Form Tambah Jadwal -------------------- */
 .add-form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
@@ -295,7 +295,7 @@ button.has-submenu span {
   background: #2980b9;
 }
 
-/* Tombol Hapus */
+/* ---------- Tombol Hapus -------------------------- */
 .delete-btn {
   background: #e74c3c;
   color: #fff;
@@ -309,11 +309,11 @@ button.has-submenu span {
   background: #c0392b;
 }
 
-/* ===============================
+/* ===================================================
    RESPONSIVE DESIGN
-=============================== */
+=================================================== */
 
-/* Tablet (≤ 992px) */
+/* ---------- Tablet (≤ 992px) ---------------------- */
 @media (max-width: 992px) {
   .sidebar {
     width: 200px;
@@ -331,7 +331,7 @@ button.has-submenu span {
   }
 }
 
-/* Mobile (≤ 768px) */
+/* ---------- Mobile (≤ 768px) ---------------------- */
 @media (max-width: 768px) {
   body {
     flex-direction: column;
@@ -371,7 +371,7 @@ button.has-submenu span {
   }
 }
 
-/* Extra Small (≤ 480px) */
+/* ---------- Extra Small (≤ 480px) ----------------- */
 @media (max-width: 480px) {
   .office-admin {
     grid-template-columns: 1fr;
@@ -384,4 +384,43 @@ button.has-submenu span {
   .office-card li {
     font-size: 12px;
   }
+}
+
+/* ===================================================
+   PENGUMUMAN KANTOR
+=================================================== */
+.pengumuman {
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+.pengumuman:hover {
+  transform: translateY(-3px);
+}
+.pengumuman h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #2d3748;
+}
+
+.announcement-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+.announcement-list li {
+  font-size: 0.95rem;
+  padding: 8px 0;
+  border-bottom: 1px solid #f1f1f1;
+  color: #4a5568;
+}
+.announcement-list li:last-child {
+  border-bottom: none;
+}
+.announcement-list strong {
+  color: #2b6cb0;
+  font-weight: 600;
 }

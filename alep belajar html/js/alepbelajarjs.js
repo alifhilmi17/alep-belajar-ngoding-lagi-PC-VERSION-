@@ -17,7 +17,7 @@ function goToProfile() {
 }
 
 /**
- * Toggle submenu pada sidebar
+ Toggle submenu pada sidebar
  */
 function toggleSidebarMenu() {
   const submenu = document.getElementById("appSubmenu");
@@ -117,3 +117,4 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
